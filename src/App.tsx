@@ -5,7 +5,7 @@ import { Container, Row } from "react-bootstrap";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Progress from "./components/ProgressIndicator";
-import View from "./view";
+import View from "./view/view-entry";
 
 function App(): JSX.Element {
 	return (

@@ -1,7 +1,7 @@
 import React from "react";
 
 import sprite from "../../assets/svg/sprite.svg";
-import "./Sprite.component.scss";
+import "./style.scss";
 const SVGSprite = (props: {
 	link: string;
 	className?: string;
