@@ -5,9 +5,7 @@ import companyLogo from "../../assets/img/logo/logo-gb.png";
 const ListItem = (props: { title: string; link: string }): JSX.Element => {
 	return (
 		<li className="footer-box_content--list-item">
-			<a href={props.link} target="_blank" rel="noreferrer">
-				{props.title}
-			</a>
+			<a href={props.link}>{props.title}</a>
 		</li>
 	);
 };
