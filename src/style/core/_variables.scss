@@ -1,0 +1,114 @@
+// Colors
+$white: #fff;
+$gray-100: #fefefe;
+$gray-200: #dfdfdf;
+$gray-300: #c9c9c9;
+$gray-400: #9f9f9f;
+$gray-800: #585757;
+$gray-900: #2f2f2f;
+$black: #000000;
+
+$brown-100: #f3e2d9;
+$brown-700: #cd8b65;
+$brown-800: #cd8a64;
+$brown-900: #c4794f;
+$brown: #ab7455;
+
+$primary: $brown;
+$secondary: $gray-900;
+
+// Options
+
+$enable-smooth-scroll: true;
+
+// Typography
+
+$font-family-sans-serif: "Myriad Pro", sans-serif;
+
+// Paragraphs
+
+$paragraph-margin-bottom: 1.5rem;
+
+// Grid
+$grid-gutter-width: 1rem;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1240px,
+);
+
+$container-max-widths: (
+    xl: 71.25rem + $grid-gutter-width,
+);
+
+// Body
+
+$body-color: $gray-800;
+
+// Typography
+
+$font-size-base: 1rem;
+
+$headings-font-weight: 600;
+$headings-line-height: 1.1;
+$headings-color: $gray-900;
+
+$lead-font-size: $font-size-base * 1.125;
+$lead-font-weight: 600;
+
+$h1-font-size: 3rem;
+$h2-font-size: 2.625rem;
+$h3-font-size: 2rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1.125rem;
+
+// Components
+
+$border-radius: 0.125rem;
+$border-radius-sm: 0.125rem;
+
+$box-shadow: 0 0 1.25rem rgba($black, 0.05);
+
+// Buttons + Forms
+
+$input-btn-font-size: 0.875rem;
+$input-btn-line-height: 1.3;
+
+$input-btn-padding-y: 0.9375rem;
+$input-btn-padding-x: 2rem;
+
+$input-btn-padding-y-sm: 0.625rem;
+$input-btn-padding-x-sm: 1.5rem;
+
+// Buttons
+
+$btn-font-weight: 600;
+
+// Forms
+
+$form-label-font-weight: 600;
+$form-label-margin-bottom: 0.25rem;
+
+$input-padding-x: 1rem;
+
+$input-bg: $white;
+
+// Cards
+
+$card-spacer-y: 1.5rem;
+$card-spacer-x: 1.5rem;
+
+// Line height
+
+$line-height-base: 1.7;
+
+// Font weight
+
+$font-weight-bolder: 600;
+$font-weight-bold: 600;
+
+@import "../../../node_modules/bootstrap/scss/variables";

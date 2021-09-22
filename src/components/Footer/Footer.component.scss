@@ -1,0 +1,62 @@
+.footer {
+    &-box {
+        padding-top: 7.1875rem;
+        box-shadow: 0rem -0.0625rem 0rem 0rem rgba($color: $black, $alpha: 0.08);
+
+        &_logo img {
+            width: 13.75rem;
+            height: 3.5rem;
+            display: block;
+        }
+    }
+}
+
+.footer-box_content {
+    width: 10.625rem;
+    float: right;
+
+    h2 {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 130%;
+        margin-bottom: 1.5rem;
+        color: $gray-900;
+    }
+
+    &--list {
+        line-height: 200%;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0;
+        max-width: 100%;
+        font-size: 1rem;
+        font-weight: 400;
+
+        &-item a {
+            text-decoration: none;
+            color: $gray-800;
+            position: relative;
+            transition: 0.2s ease-in;
+        }
+
+        &-item a:hover {
+            transition: 0.2s ease-in;
+        }
+
+        &-item a::after {
+            content: "";
+            position: absolute;
+            height: 0.0625rem;
+            width: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba($color: $gray-800, $alpha: 0.8);
+            transition: 0.3s;
+        }
+
+        &-item a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
