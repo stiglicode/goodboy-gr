@@ -15,8 +15,6 @@ function App(): JSX.Element {
 				<Row>
 					<Progress count="3" status="2" />
 					<View.Wrapper>
-						<View.Check />
-						<View.Form />
 						<View.Option />
 					</View.Wrapper>
 				</Row>
