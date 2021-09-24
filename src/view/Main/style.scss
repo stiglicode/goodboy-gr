@@ -1,0 +1,32 @@
+.view-box {
+    &_content {
+        width: 34.8125rem;
+
+        &--header h1 {
+            font-family: "Hind", sans-serif;
+            font-weight: 700;
+            font-size: 2.875rem;
+            line-height: 1.15;
+            margin-bottom: 2.625rem;
+            user-select: none;
+            color: $black;
+        }
+
+        &--footer {
+            margin-top: 4.0625rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &--footer div.placeholder {
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}
+
+.br-mt {
+    margin-top: 2.625rem;
+}
