@@ -1,0 +1,18 @@
+button,
+input[type="button"] {
+    border: none;
+}
+
+.custom-btn-primary {
+    @include custom-btn($white, $primary, "true");
+    @include box-shadow;
+}
+
+.custom-btn-gray {
+    @include custom-btn($white, $gray-400, "false");
+    @include box-shadow;
+}
+
+.custom-btn-light {
+    @include custom-btn($gray-900, $brown-100, "false");
+}
