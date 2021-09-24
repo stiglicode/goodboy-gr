@@ -1,1 +1,59 @@
 @import "../../../node_modules/bootstrap/scss/mixins";
+
+@mixin gradient-primary() {
+    background-color: $brown-700 !important;
+    background: linear-gradient(to right, $brown-800 0%, $brown-900 100%);
+}
+
+@mixin custom-btn($font-color, $border, $gradient: "false") {
+    @if $gradient == "true" {
+        @include gradient-primary;
+    } @else {
+        background-color: $border;
+    }
+    font-size: 0.875rem;
+    border-radius: 10 * 100px;
+    line-height: 1.4;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    color: $font-color;
+    position: relative;
+    transition: 0.2s ease;
+
+    &::after {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        inset: 5px;
+        border-radius: 10 * 100px;
+        border: solid 0.125rem $border;
+        transition: 0.2s ease;
+    }
+
+    &:hover {
+        transform: scale(0.95);
+    }
+
+    &:hover::after {
+        inset: -0.3125rem;
+        opacity: 1;
+        transform: scale(1) !important;
+    }
+
+    &:active {
+        transform: scale(0.85);
+    }
+
+    &:active::after {
+        transform: scale(1.1) !important;
+    }
+}
+
+@mixin box-shadow {
+    box-shadow: 0px 80px 100px 0px rgba($color: $black, $alpha: 0.07),
+        0px 33.42px 41.78px 0px rgba($color: $black, $alpha: 0.0503),
+        0px 17.87px 22.34px 0px rgba($color: $black, $alpha: 0.0417),
+        0px 10.02px 12.52px 0px rgba($color: $black, $alpha: 0.035),
+        0px 5.32px 6.65px 0px rgba($color: $black, $alpha: 0.0283),
+        0px 2.21px 2.77px 0px rgba($color: $black, $alpha: 0.0197);
+}
