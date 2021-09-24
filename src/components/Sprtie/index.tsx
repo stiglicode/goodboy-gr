@@ -9,13 +9,11 @@ const SVGSprite = (props: {
 	const link = `${sprite}#${props.link}`;
 
 	return (
-		<div className="icon-wrapper">
+		<div
+			className={`icon-wrapper ${props.className ? props.className : ""}`}
+		>
 			<svg
-				className={
-					"svg" +
-					" " +
-					`svg--${!props.className ? props.link : props.className}`
-				}
+				className={"svg" + " " + `svg--${props.link}`}
 				role="presentation"
 			>
 				<use xlinkHref={link}></use>
