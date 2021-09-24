@@ -1,0 +1,65 @@
+.datalist {
+    width: 100%;
+    display: block;
+    font-size: 0.875rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border: solid 1px $brown-700;
+    border-top: none;
+    position: absolute;
+    background-color: $white;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+
+    &:hover {
+        top: 4.5rem;
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    &-item {
+        padding: 0.8125rem 1.5rem 0.8125rem 1.5rem;
+        display: block;
+        width: 100%;
+        cursor: default;
+        transition: 0.2s ease;
+        text-align: left;
+
+        &:hover {
+            background-color: rgba($color: $black, $alpha: 0.1);
+        }
+
+        &.active {
+            background-color: rgba($color: $black, $alpha: 0.05);
+            padding-left: 1.875rem;
+
+            &:hover {
+                background-color: rgba($color: $black, $alpha: 0.1);
+            }
+        }
+
+        &.empty {
+            margin-top: 0.5rem;
+            color: $gray-400;
+            &::before {
+                transition: 0.2s ease;
+                content: "Žiadny útolok";
+                padding-left: 0.5rem;
+            }
+            &::after {
+                content: "\2715";
+                padding-right: 0.5rem;
+                float: right;
+            }
+            &:active {
+                &::before {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
