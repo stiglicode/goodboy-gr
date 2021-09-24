@@ -22,9 +22,15 @@ const FormInput = (
 				<DataList activeItem={cb_ActiveItem} />
 			)}
 			{props.className === "type--dropdown" ? (
-				<input {...props} required value={dropDownValue} disabled />
+				<input
+					{...props}
+					className=""
+					required
+					value={dropDownValue}
+					disabled
+				/>
 			) : (
-				<input {...props} required />
+				<input {...props} className="" required />
 			)}
 			<label>{props.title}</label>
 			{props.className === "type--dropdown" && (
