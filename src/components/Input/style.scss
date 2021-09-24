@@ -1,0 +1,138 @@
+.input-box {
+    font-size: 1rem;
+    width: 100%;
+    position: relative;
+    display: block;
+    background: none;
+    outline: 0;
+    border: 0;
+    padding: 0;
+    &.type--dropdown {
+        cursor: default;
+
+        &:focus {
+            .datalist {
+                top: 4.5rem;
+                pointer-events: all;
+                opacity: 1;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    background-color: $gray-200;
+                    height: 1px;
+                    top: 1px;
+                    left: 2%;
+                    right: 2%;
+                }
+            }
+
+            input {
+                border-bottom-left-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+                border-bottom: none;
+                position: relative;
+                border-color: $brown-700;
+            }
+
+            label {
+                top: -0.5rem;
+                background-color: $white;
+                padding: 0 0.5rem;
+                margin-left: -0.5rem;
+            }
+
+            .input-box_toggler {
+                transform: rotate(180deg);
+                color: $gray-300;
+            }
+        }
+
+        &.active {
+            input {
+                border-color: $brown-700;
+            }
+
+            label {
+                top: -0.5rem;
+                background-color: $white;
+                padding: 0 0.5rem;
+                margin-left: -0.5rem;
+            }
+        }
+
+        .input-box_toggler {
+            display: inline-flex;
+            pointer-events: none;
+        }
+
+        input {
+            cursor: inherit;
+        }
+    }
+
+    &.is-required {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "Nepovinné";
+            color: rgba($color: $gray-900, $alpha: 0.8);
+            font-weight: 800;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            top: -2rem;
+            right: 0;
+        }
+    }
+
+    .input-box_toggler {
+        display: none;
+        color: $gray-200;
+        stroke: currentColor;
+        fill: none;
+        position: absolute;
+        top: 2.125rem;
+        right: 1.5625rem;
+        transition: 0.2s ease;
+        transform: rotate(0deg);
+    }
+
+    input {
+        border: solid 1px $gray-200;
+        outline: none;
+        background-color: $white;
+        border-radius: 0.5rem;
+        padding: 2.4375rem 1.5rem 0.8125rem 1.5rem;
+        box-sizing: border-box;
+        width: 100%;
+        line-height: 1;
+        transition: 0.2s ease-out;
+
+        &:focus,
+        &:valid {
+            border-color: $brown-700;
+        }
+
+        &:focus + label,
+        &:valid + label {
+            top: -0.5rem;
+            background-color: $white;
+            padding: 0 0.5rem;
+            margin-left: -0.5rem;
+        }
+    }
+
+    label {
+        position: absolute;
+        line-height: 1;
+        top: 1.25rem;
+        left: 1.5rem;
+        pointer-events: none;
+        font-weight: 800;
+        transition: 0.2s ease-out;
+    }
+}
+::placeholder {
+    color: $gray-400;
+}
