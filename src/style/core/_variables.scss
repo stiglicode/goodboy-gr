@@ -33,14 +33,17 @@ $paragraph-margin-bottom: 1.5rem;
 $grid-gutter-width: 1rem;
 
 $grid-breakpoints: (
-    xs: 0,
+    xs: 360px,
     sm: 576px,
-    md: 768px,
+    md: 860px,
     lg: 992px,
     xl: 1240px,
 );
 
 $container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
     xl: 71.25rem + $grid-gutter-width,
 );
 
