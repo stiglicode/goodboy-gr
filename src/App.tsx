@@ -11,7 +11,7 @@ function App(): JSX.Element {
 	return (
 		<div className="wrapper">
 			<Header />
-			<Container>
+			<Container className="container-sm">
 				<Row>
 					<Progress count="3" status="2" />
 					<View.Wrapper>
