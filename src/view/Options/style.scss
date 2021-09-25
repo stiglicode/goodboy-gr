@@ -1,21 +1,9 @@
-.view-box_content--body_row {
-    position: relative;
-    width: 100%;
-    height: fit-content;
-
-    h2 {
-        font-size: 1rem;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 0.8125rem;
-        color: $gray-900;
-    }
-}
-
 .options-boxes {
     width: 100%;
     margin-top: -0.875rem;
     margin-bottom: 3.5625rem;
+    display: flex;
+    flex-direction: row;
     &_item {
         width: 12.4375rem;
         height: 8.6875rem;
