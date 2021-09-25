@@ -4,7 +4,10 @@
 }
 
 .view-box_content {
-    width: 34.5rem;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        width: 34.5rem;
+    }
 
     &--header {
         max-width: 34.5rem;
@@ -53,6 +56,11 @@
     width: 22.75rem;
     height: 45.625rem;
     margin-left: 4.3125rem;
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
 }
 
 .view-box_content--body_row {
