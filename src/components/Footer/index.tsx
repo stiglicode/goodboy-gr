@@ -15,12 +15,12 @@ const Footer = (): JSX.Element => {
 		<footer className="footer">
 			<div className="footer-box">
 				<Row>
-					<Col md="3">
+					<Col className="col-xs-6" md="12" lg="3">
 						<a href="/" className="footer-box_logo">
 							<Image src={companyLogo} loading="lazy" />
 						</a>
 					</Col>
-					<Col md="3">
+					<Col className="col-xs-6" md="4" lg="3">
 						<div className="footer-box_content">
 							<h2>Nadácia Good boy</h2>
 							<ul className="footer-box_content--list">
@@ -30,7 +30,7 @@ const Footer = (): JSX.Element => {
 							</ul>
 						</div>
 					</Col>
-					<Col md="3">
+					<Col className="col-xs-6" md="4" lg="3">
 						<div className="footer-box_content">
 							<h2>Nadácia Good boy</h2>
 							<ul className="footer-box_content--list">
@@ -43,7 +43,7 @@ const Footer = (): JSX.Element => {
 							</ul>
 						</div>
 					</Col>
-					<Col md="3">
+					<Col className="col-xs-6" md="4" lg="3">
 						<div className="footer-box_content">
 							<h2>Nadácia Good boy</h2>
 							<ul className="footer-box_content--list">

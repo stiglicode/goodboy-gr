@@ -1,28 +1,58 @@
 .footer {
     margin-top: 7.5rem;
-    padding-bottom: 5.25rem;
     &-box {
-        padding-top: 7.1875rem;
+        padding-top: 2.5rem;
+        padding-bottom: 0;
         box-shadow: 0rem -0.0625rem 0rem 0rem rgba($color: $black, $alpha: 0.08);
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 7.1875rem;
+            padding-bottom: 5.25rem;
+        }
 
         &_logo img {
             width: 13.75rem;
-            height: 3.5rem;
             display: block;
+            margin: 0 auto 3.5rem auto;
+
+            @include media-breakpoint-up(xs) {
+                width: 10.625rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin: 0;
+                width: 13.75rem;
+                height: 3.5rem;
+            }
         }
     }
 }
 
 .footer-box_content {
     width: 10.625rem;
-    float: right;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    @include media-breakpoint-up(xs) {
+        text-align: left;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin: 0;
+        float: right;
+    }
 
     h2 {
         font-size: 1rem;
         font-weight: 800;
+        margin-bottom: 0.8rem;
         line-height: 130%;
-        margin-bottom: 1.5rem;
         color: $gray-900;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 1.5rem;
+        }
     }
 
     &--list {
