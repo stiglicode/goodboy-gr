@@ -109,6 +109,11 @@
         line-height: 1;
         transition: 0.2s ease-out;
 
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
         &:focus,
         &:valid {
             border-color: $brown-700;
@@ -121,6 +126,11 @@
             padding: 0 0.5rem;
             margin-left: -0.5rem;
         }
+
+        &:-internal-autofill-selected {
+            background-color: $white !important;
+            color: inherit !important;
+        }
     }
 
     label {
@@ -131,6 +141,22 @@
         pointer-events: none;
         font-weight: 800;
         transition: 0.2s ease-out;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    .input-value-preview {
+        pointer-events: none;
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        color: rgba($color: $gray-200, $alpha: 0.6);
     }
 }
 ::placeholder {
