@@ -4,18 +4,12 @@ import React, { ReactChildren } from "react";
 import { dog } from "./images-url";
 
 const ViewWrapper = (props: { children: ReactChildren }): JSX.Element => {
-	const testSubimt = (e: React.ChangeEvent<HTMLFormElement>): void => {
-		e.preventDefault();
-	};
-
 	return (
 		<div className="view-box">
 			<div className="view-box_content">
-				<form onSubmit={testSubimt} autoComplete="off">
-					{React.Children.map(props.children, child => {
-						return child;
-					})}
-				</form>
+				{React.Children.map(props.children, child => {
+					return child;
+				})}
 			</div>
 			<div className="view-box_image">
 				<div className="image-wrapper">
