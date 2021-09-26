@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actions } from "../../app/state/index";
+
 import FormInput from "../../components/Input";
 import SVGSprite from "../../components/Sprtie";
 
 const Options = (): JSX.Element => {
+	const dispatch = useDispatch();
+	const { nextScene } = bindActionCreators(actions, dispatch);
+
 	const initFoucs = (e: React.ChangeEvent<any>): void => {
 		return e.currentTarget.children[0].focus();
 	};
@@ -101,7 +108,13 @@ const Options = (): JSX.Element => {
 			</div>
 			<div className="view-box_content--footer">
 				<div className="footer-placehodler"></div>
-				<button type="submit" className="custom-btn-primary">
+				<button
+					type="button"
+					onClick={() => {
+						nextScene();
+					}}
+					className="custom-btn-primary"
+				>
 					Pokračovať
 				</button>
 			</div>

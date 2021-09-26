@@ -1,7 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actions } from "../../app/state/index";
+
 import ReadInput from "../../components/CheckInputs";
 
 const DoubleCheck = (): JSX.Element => {
+	const dispatch = useDispatch();
+
+	const { previousScene } = bindActionCreators(actions, dispatch);
+
 	return (
 		<>
 			<div className="view-box_content--header">
@@ -52,7 +60,13 @@ const DoubleCheck = (): JSX.Element => {
 				</div>
 			</div>
 			<div className="view-box_content--footer">
-				<button type="button" className="custom-btn-light">
+				<button
+					type="button"
+					onClick={() => {
+						previousScene();
+					}}
+					className="custom-btn-light"
+				>
 					Späť
 				</button>
 				<button type="button" className="custom-btn-gray">
