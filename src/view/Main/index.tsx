@@ -1,10 +1,7 @@
 import React, { ReactChildren } from "react";
 
 // images
-import dog_JPG from "../../assets/img/jpg/title_picture-min.jpg";
-import dog_retina_JPG from "../../assets/img/jpg/title_picture@2-min.jpg";
-import dog_WEBP from "../../assets/img/webp/title_picture-min.webp";
-import dog_retina_WEBP from "../../assets/img/webp/title_picture@2-min.webp";
+import { dog } from "./images-url";
 
 const ViewWrapper = (props: { children: ReactChildren }): JSX.Element => {
 	const testSubimt = (e: React.ChangeEvent<HTMLFormElement>): void => {
@@ -24,12 +21,12 @@ const ViewWrapper = (props: { children: ReactChildren }): JSX.Element => {
 				<div className="image-wrapper">
 					<picture className="image-wrapper image-wrapper--364-by-730">
 						<source
-							srcSet={`${dog_WEBP} 1x, ${dog_retina_WEBP} 2x`}
+							srcSet={`${dog.WEBP} 1x, ${dog.retinaWEBP} 2x`}
 							type="image/webp"
 						/>
 						<img
-							src={dog_JPG}
-							srcSet={`${dog_JPG} 1x, ${dog_retina_JPG} 2x`}
+							src={dog.JPG}
+							srcSet={`${dog.JPG} 1x, ${dog.retinaJPG} 2x`}
 							alt="Dog"
 							loading="lazy"
 						/>
