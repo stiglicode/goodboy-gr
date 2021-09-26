@@ -16,7 +16,7 @@ const Progress = (props: {
 				return (
 					<div
 						className={`progress-box_item ${
-							i + 1 === +props.status ? "active" : ""
+							i === +props.status ? "active" : ""
 						}`}
 						key={i}
 					></div>
