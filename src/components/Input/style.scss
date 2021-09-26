@@ -35,7 +35,7 @@
                 border-color: $brown-700;
             }
 
-            label {
+            .input-box_label {
                 top: -0.5rem;
                 background-color: $white;
                 padding: 0 0.5rem;
@@ -53,7 +53,7 @@
                 border-color: $brown-700;
             }
 
-            label {
+            .input-box_label {
                 top: -0.5rem;
                 background-color: $white;
                 padding: 0 0.5rem;
@@ -119,8 +119,8 @@
             border-color: $brown-700;
         }
 
-        &:focus + label,
-        &:valid + label {
+        &:focus + .input-box_label,
+        &:valid + .input-box_label {
             top: -0.5rem;
             background-color: $white;
             padding: 0 0.5rem;
@@ -133,7 +133,7 @@
         }
     }
 
-    label {
+    .input-box_label {
         position: absolute;
         line-height: 1;
         top: 1.25rem;
