@@ -1,21 +1,10 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/state/types";
 
-const DataList = ({
-	activeItem,
-}: {
-	activeItem: (cb: string) => void;
-}): JSX.Element => {
-	const [testState, setTestState] = useState([
-		{
-			id: 1,
-			name: "Útulok pre psov - TEZAS",
-		},
-		{
-			id: 2,
-			name: "OZ Tuláčik Brezno",
-		},
-	]);
+const DataList = (props: { activeItem: (cb: string) => void }): JSX.Element => {
 	const [currentID, setCurrentID] = useState("");
+	const DropdonState = useSelector((state: RootState) => state._API.shelters);
 
 	const handleItemClick = (c: React.MouseEvent<HTMLElement>): void => {
 		setCurrentID(
@@ -23,7 +12,7 @@ const DataList = ({
 				? c.currentTarget.dataset.count
 				: ""
 		);
-		return activeItem(
+		return props.activeItem(
 			c.currentTarget.dataset.value !== undefined
 				? c.currentTarget.dataset.value
 				: ""
@@ -32,7 +21,7 @@ const DataList = ({
 
 	return (
 		<div className="datalist">
-			{testState.map((shelter, i): JSX.Element => {
+			{DropdonState.map((shelter, i): JSX.Element => {
 				return (
 					<span
 						className={`datalist-item ${
@@ -43,15 +32,31 @@ const DataList = ({
 						key={shelter.id || i}
 						onClick={handleItemClick}
 					>
-						{shelter.name}
+						<input
+							type="radio"
+							name="sSelections"
+							id={`drop-down-selection--${i + 1}`}
+							value={shelter.name}
+						/>
+						<label htmlFor={`drop-down-selection--${i + 1}`}>
+							{shelter.name}
+						</label>
 					</span>
 				);
 			})}
 			<span
 				className={"datalist-item empty"}
-				data-value={""}
+				data-value=""
 				onClick={handleItemClick}
-			></span>
+			>
+				<input
+					type="radio"
+					name="shelterSelections"
+					id="drop-down-selection--0"
+					value=""
+				/>
+				<label htmlFor="drop-down-selection--0">Žiadny útolok</label>
+			</span>
 		</div>
 	);
 };
