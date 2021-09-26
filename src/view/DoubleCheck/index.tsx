@@ -1,14 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions } from "../../app/state/index";
+import { RootState } from "../../app/state/types";
 
 import ReadInput from "../../components/CheckInputs";
 
 const DoubleCheck = (): JSX.Element => {
 	const dispatch = useDispatch();
-
 	const { previousScene } = bindActionCreators(actions, dispatch);
+
+	const finalDATA = useSelector((state: RootState) => state);
 
 	return (
 		<>
@@ -20,33 +22,33 @@ const DoubleCheck = (): JSX.Element => {
 					<h2>Skontrolujte si zadané údaje</h2>
 					<div className="form-doublecheck">
 						<ReadInput
-							value="Chcem finančne prispieť celej nadácii"
 							title="Akou formou chcem pomôcť"
+							value={finalDATA.optionData.donateFormat}
 							name="finalClientForm"
 						/>
 						<ReadInput
 							title="Najviac mi záleží na útulku"
-							value="Mestský útulok, Žilina"
+							value={finalDATA.optionData.shelterSelection}
 							name="finalClientShelter"
 						/>
 						<ReadInput
 							title="Suma ktorou chcem pomôcť"
-							value="50 €"
+							value={`${finalDATA.optionData.donationValue}€`}
 							name="finalClientDonate"
 						/>
 						<ReadInput
 							title="Meno a priezvisko"
-							value="Peter Reguli"
+							value={`${finalDATA.formData.name} ${finalDATA.formData.last_name}`}
 							name="finalClientName"
 						/>
 						<ReadInput
 							title="E-mailová adresa"
-							value="peter.reguli@goodrequest.com"
+							value={finalDATA.formData.email}
 							name="finalClientEmail"
 						/>
 						<ReadInput
 							title="Telefónne číslo"
-							value="+421 902 237 207"
+							value={finalDATA.formData.phoneNumber}
 							name="finalClientPhone"
 						/>
 					</div>
