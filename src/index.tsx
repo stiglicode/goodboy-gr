@@ -6,7 +6,7 @@ import App from "./App";
 // # Main styles
 import "./style/style.scss";
 // # Store
-import { store } from "./app/store";
+import { store } from "./app/state/store/store";
 import { Provider } from "react-redux";
 
 ReactDOM.render(
