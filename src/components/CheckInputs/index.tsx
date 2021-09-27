@@ -1,18 +1,13 @@
+import { Field } from "formik";
 import React from "react";
 
-const ReadInput = ({
-	title,
-	value,
-	name,
-}: {
-	title: string;
-	value: string;
-	name: string;
-}): JSX.Element => {
+const ReadInput = (
+	props: React.InputHTMLAttributes<HTMLInputElement>
+): JSX.Element => {
 	return (
 		<div className="form-doublecheck_row">
-			<span>{title}</span>
-			<input type="text" name={name} disabled value={value} />
+			<span>{props.title}</span>
+			<Field {...props} disabled />
 		</div>
 	);
 };
