@@ -1,4 +1,5 @@
 import * as yup from "yup";
+import { string } from "yup/lib/locale";
 
 const optionScene = yup.object({
 	donate: yup.string().required("Prosím vyberte čiastku príspevku"),
@@ -28,7 +29,20 @@ const formScene = yup.object({
 	phoneNumber: yup.string().required("Telefóne čislo je povinné"),
 });
 
+const doubleCheckScene = yup.object({
+	finalClientForm: yup.string().required(),
+	finalClientShelter: yup.string(),
+	finalClientDonate: yup.string().required(),
+	finalClientName: yup.string().required(),
+	finalClientEmail: yup.string().email().required(),
+	finalClientPhone: yup.string().required(),
+	finalClientPersonalData: yup
+		.boolean()
+		.oneOf([true], "Pre pokračovanie potvrdťe súhlas!"),
+});
+
 export const Schema = {
 	optionScene,
 	formScene,
+	doubleCheckScene,
 };
