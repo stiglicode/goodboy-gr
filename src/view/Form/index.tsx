@@ -1,12 +1,13 @@
 import React from "react";
 import { Formik, Form, FormikHelpers } from "formik";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions } from "../../app/state/index";
 
 import FormInput from "../../components/Input";
 import { Schema } from "../Main/validation-schamas";
+import { RootState } from "../../app/state/types";
 
 const FormView = (): JSX.Element => {
 	const dispatch = useDispatch();
@@ -15,6 +16,8 @@ const FormView = (): JSX.Element => {
 		actions,
 		dispatch
 	);
+
+	const prefixer = useSelector((state: RootState) => state.prefix);
 
 	const formSubmitHandler = (
 		values: {
@@ -32,12 +35,11 @@ const FormView = (): JSX.Element => {
 			phoneNumber: string;
 		}>
 	) => {
-		let prefix = "+421";
 		formSceneData({
 			name: values.name,
 			last_name: values.last_name,
 			email: values.email,
-			phoneNumber: (prefix += values.phoneNumber),
+			phoneNumber: `${prefixer.prefix}${values.phoneNumber}`,
 		});
 		nextScene();
 		setSubmitting(false);

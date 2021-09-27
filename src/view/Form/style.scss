@@ -13,31 +13,32 @@
             position: relative;
         }
 
-        &_number::after {
-            position: absolute;
-            content: "+421";
-            font-size: 1rem;
-            line-height: 1.2;
-            left: 3.6875rem;
-            bottom: 14px;
-            display: block;
-            color: $gray-400;
-        }
-
-        &_number::before {
-            position: absolute;
-            content: "";
-            line-height: 1.2;
-            width: 1.4375rem;
-            height: 0.941875rem;
-            background-image: url("../../assets/svg/slovak-flag.svg");
-            left: 1.5rem;
-            bottom: 17px;
-            display: block;
-        }
-
         &_number input {
-            padding-left: 97px;
+            padding-left: 6.25rem;
         }
+    }
+}
+
+.number-prefix {
+    position: absolute;
+    background: none;
+    outline: 0;
+    border: 0;
+    left: 1.5rem;
+    bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0;
+
+    &_icon {
+        margin-right: 0.75rem;
+        font-size: 1.4375rem;
+        transform: translateY(0.125rem);
+    }
+    &_placeholder {
+        line-height: 1;
+        font-size: 1rem;
+        color: $gray-400;
     }
 }

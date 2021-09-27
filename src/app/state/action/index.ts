@@ -7,6 +7,8 @@ import {
 	FormReducer,
 	SheltersDataObject,
 	SheltersReducer,
+	PrefixerDataObject,
+	PrefixerReducer,
 } from "../types";
 import { API, ScenesActionType, ScenesType } from "../types/enum";
 
@@ -55,10 +57,20 @@ const api_sheltersData = (state: SheltersDataObject) => {
 	};
 };
 
+const prefixer = (state: PrefixerDataObject) => {
+	return (dispatch: Dispatch<PrefixerReducer>): void => {
+		dispatch({
+			type: API.PREFIXER,
+			payload: state,
+		});
+	};
+};
+
 export {
 	nextScene,
 	previousScene,
 	optionSceneData,
 	formSceneData,
 	api_sheltersData,
+	prefixer,
 };

@@ -71,3 +71,19 @@ interface SheltersReducerSave {
 
 export type SheltersReducer = SheltersReducerSave;
 export type SheltersDataObject = SheltersData;
+
+// Types for API - Shelters
+interface PrefixerData {
+	pattern: string;
+	prefix: string;
+	patternLength: number;
+	flag: string;
+}
+
+interface PrefixerReducerSave {
+	type: API.PREFIXER;
+	payload: PrefixerData;
+}
+
+export type PrefixerReducer = PrefixerReducerSave;
+export type PrefixerDataObject = PrefixerData;

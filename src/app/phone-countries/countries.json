@@ -1,6 +1,14 @@
 {
 	"SK": {
 		"pattern": "xxx-xxx-xxx",
-		"prefix": "+421"
+		"prefix": "+421",
+		"patternLength": 9,
+		"flag": "slovak-flag"
+	},
+	"CZ": {
+		"pattern": "xxx-xxx-xxx",
+		"prefix": "+420",
+		"patternLength": 9,
+		"flag": "czech-flag"
 	}
 }

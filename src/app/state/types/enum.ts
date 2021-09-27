@@ -10,4 +10,5 @@ export enum ScenesType {
 
 export enum API {
 	SHELTERS = "shelters_api",
+	PREFIXER = "prefix",
 }
